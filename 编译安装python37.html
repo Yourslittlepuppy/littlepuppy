@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>002Python_Linux.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h2 id="%E7%AC%AC%E4%B8%80%E7%AB%A0-linux-%E7%8E%AF%E5%A2%83%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">第一章 Linux 环境下Python开发环境搭建</h2>
+<h3 id="%E7%AC%AC%E4%BA%8C%E8%8A%82-centos7%E7%B3%BB%E7%BB%9F-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-python3-%E7%8E%AF%E5%A2%83">第二节 CentOS7系统 编译安装 Python3 环境</h3>
+<h4 id="121-%E5%87%86%E5%A4%87%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83">1.2.1 准备编译环境</h4>
+<p>   编译安装 Python之前，我们还需要准备好编译环境。下面我们在CentOS7<br>
+系统中安装具体编译软件和 python 依赖的软件包，如下：</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># yum install -y gcc make patch gdbm-devel openssl-devel sqlite-devel readline-devel zlib-devel bzip2-devel ncurses-devel libffi-devel</span>
+.
+.省略安装过程
+.
+[root@localhost bin]<span class="hljs-comment"># yum install -y gcc make patch gdbm-devel openssl-devel sqlite-devel readline-devel zlib-devel bzip2-devel ncurses-devel libffi-devel</span>
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.huaweicloud.com
+ * extras: mirrors.huaweicloud.com
+ * updates: mirrors.huaweicloud.com
+Package gcc-4.8.5-36.el7_6.1.x86_64 already installed and latest version
+Package 1:make-3.82-23.el7.x86_64 already installed and latest version
+Package patch-2.7.1-10.el7_5.x86_64 already installed and latest version
+Package gdbm-devel-1.10-8.el7.x86_64 already installed and latest version
+Package 1:openssl-devel-1.0.2k-16.el7_6.1.x86_64 already installed and latest version
+Package sqlite-devel-3.7.17-8.el7.x86_64 already installed and latest version
+Package readline-devel-6.2-10.el7.x86_64 already installed and latest version
+Package zlib-devel-1.2.7-18.el7.x86_64 already installed and latest version
+Package bzip2-devel-1.0.6-13.el7.x86_64 already installed and latest version
+Package ncurses-devel-5.9-14.20130511.el7_4.x86_64 already installed and latest version
+Package libffi-devel-3.0.13-18.el7.x86_64 already installed and latest version
+Nothing to <span class="hljs-keyword">do</span>
+[root@localhost bin]<span class="hljs-comment"># </span>
+</div></code></pre>
+<h4 id="122-%E8%8E%B7%E5%8F%96-python3-%E6%BA%90%E7%A0%81%E5%8C%85">1.2.2 获取 python3 源码包</h4>
+<p>   访问 <a href="https://www.python.org">Python</a> 官方网站，下载指定版本的源代码包, 在网站 Download<br>
+导航栏中选择 Source code ，然后在跳转的页面中选择自己想要的 python<br>
+版本，这里我们复制下载地址，使用 wget 命令下载 python3.7.3，如图：</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz</span>
+--2019-03-27 16:44:04--  https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+Resolving www.python.org (www.python.org)... 151.101.228.223, 2a04:4e42:1a::223
+Connecting to www.python.org (www.python.org)|151.101.228.223|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 22973527 (22M) [application/octet-stream]
+Saving to: ‘Python-3.7.3.tgz’
+
+100%[=========================================================&gt;] 22,973,527   158KB/s   <span class="hljs-keyword">in</span> 2m 42s 
+
+2019-03-26 16:46:49 (139 KB/s) - ‘Python-3.7.3.tgz’ saved [22973527/22973527]
+
+[root@localhost ~]<span class="hljs-comment"># </span>
+[root@localhost ~]<span class="hljs-comment"># ll</span>
+total 22476
+-rw-------. 1 root root     1866 Jan  4 22:24 anaconda-ks.cfg
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Desktop
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Documents
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Downloads
+-rw-r--r--. 1 root root     1914 Jan  4 22:27 initial-setup-ks.cfg
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Music
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Pictures
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Public
+-rw-r--r--. 1 root root 22973527 Mar 26 04:59 Python-3.7.3.tgz
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Templates
+drwxr-xr-x. 2 root root     4096 Jan  4 22:30 Videos
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<h4 id="123-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-python373">1.2.3 编译安装 Python3.7.3</h4>
+<p>  编译安装首先解压源码包，然后进入解压目录，配置编译选项，编译，最后安装，如图:</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># tar xf Python-3.7.3.tgz </span>
+[root@localhost ~]<span class="hljs-comment"># ll</span>
+total 22480
+-rw-------.  1 root root     1866 Jan  4 22:24 anaconda-ks.cfg
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Desktop
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Documents
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Downloads
+-rw-r--r--.  1 root root     1914 Jan  4 22:27 initial-setup-ks.cfg
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Music
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Pictures
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Public
+drwxr-xr-x. 18  501  501     4096 Mar 26 04:59 Python-3.7.3
+-rw-r--r--.  1 root root 22973527 Mar 26 04:59 Python-3.7.3.tgz
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Templates
+drwxr-xr-x.  2 root root     4096 Jan  4 22:30 Videos
+[root@localhost ~]<span class="hljs-comment"># cd Python-3.7.3/</span>
+[root@localhost Python-3.7.3]<span class="hljs-comment"># ls</span>
+aclocal.m4           config.sub    Doc      install-sh  m4               Misc     Parser   Programs       README.rst
+CODE_OF_CONDUCT.rst  configure     Grammar  Lib         Mac              Modules  PC       pyconfig.h.in  setup.py
+config.guess         configure.ac  Include  LICENSE     Makefile.pre.in  Objects  PCbuild  Python         Tools
+[root@localhost Python-3.7.3]<span class="hljs-comment">#</span>
+[root@localhost Python-3.7.3]<span class="hljs-comment"># ./configure --prefix=/usr/local/python37</span>
+[root@localhost Python-3.7.3]<span class="hljs-comment"># make</span>
+[root@localhost Python-3.7.3]<span class="hljs-comment"># make install</span>
+[root@localhost Python-3.7.3]<span class="hljs-comment"># cd</span>
+[root@localhost ~]<span class="hljs-comment"># cd /usr/local/python37/bin</span>
+[root@localhost bin]<span class="hljs-comment"># ./python3.7 -V</span>
+Python 3.7.3
+[root@localhost bin]<span class="hljs-comment"># cd </span>
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<h4 id="124-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">1.2.4 配置环境变量</h4>
+<p>  配置环境变量，在 <code>/etc/profile.d</code> 目录里创建配置文件，如图:</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># cd /etc/profile.d/</span>
+[root@localhost profile.d]<span class="hljs-comment"># ls</span>
+256term.csh                   bash_completion.sh  colorls.csh  flatpak.sh  less.csh       sh.local  vte.sh
+256term.sh                    colorgrep.csh       colorls.sh   lang.csh    less.sh        vim.csh   which2.csh
+abrt-console-notification.sh  colorgrep.sh        csh.local    lang.sh     PackageKit.sh  vim.sh    which2.sh
+[root@localhost profile.d]<span class="hljs-comment"># vi python3.7.sh</span>
+[root@localhost profile.d]<span class="hljs-comment"># cat python3.7.sh </span>
+<span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/usr/<span class="hljs-built_in">local</span>/python37/bin
+[root@localhost profile.d]<span class="hljs-comment">#</span>
+[root@localhost profile.d]<span class="hljs-comment"># source ./python3.7.sh </span>
+[root@localhost profile.d]<span class="hljs-comment"># python3.7 -V</span>
+Python 3.7.3
+[root@localhost profile.d]<span class="hljs-comment">#</span>
+</div></code></pre>
+<h4 id="125-%E5%86%8D%E6%AC%A1%E7%BC%96%E8%AF%91%E5%85%B6%E4%BB%96python%E7%89%88%E6%9C%AC">1.2.5 再次编译其他python版本</h4>
+<p>  完成上面的编译安装过程后，可以再次尝试编译安装其他版本的 Python。</p>
+
+</body>
+</html>
