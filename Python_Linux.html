@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Python_Linux.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h2 id="%E7%AC%AC%E4%B8%80%E7%AB%A0-linux-%E7%8E%AF%E5%A2%83%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">第一章 Linux 环境下Python开发环境搭建</h2>
+<h3 id="%E7%AC%AC%E4%B8%80%E8%8A%82-centos7%E7%B3%BB%E7%BB%9F-%E7%AE%80%E5%8D%95python%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8">第一节 CentOS7系统 简单Python环境使用</h3>
+<h4 id="111-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F-python-%E7%89%88%E6%9C%AC">1.1.1 查看当前系统 Python 版本</h4>
+<p>  Python在CentOS7.6系统中默认已经安装完成，我们经常使用的 yum<br>
+包管理工具就是用Python语言实现的。我们可以使用 <code>python -V</code> 命令查<br>
+看当前系统python的版本信息：</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># python -V</span>
+Python 2.7.5
+[root@localhost ~]<span class="hljs-comment">#</span>
+</div></code></pre>
+<p>如上图所示，系统中默认使用的python版本为 2.7.5</p>
+<p>  要想运行python程序，我们可以使用python的交互解释运行环境，终<br>
+端中直接输入 <code>python</code> 命令即可：</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># python</span>
+Python 2.7.5 (default, Apr 11 2018, 07:36:10) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)] on linux2
+Type <span class="hljs-string">"help"</span>, <span class="hljs-string">"copyright"</span>, <span class="hljs-string">"credits"</span> or <span class="hljs-string">"license"</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt; <span class="hljs-built_in">print</span>(<span class="hljs-string">"hello world"</span>)
+hello world
+&gt;&gt;&gt; 
+&gt;&gt;&gt; <span class="hljs-built_in">exit</span>()
+[root@localhost ~]<span class="hljs-comment">#</span>
+</div></code></pre>
+<p>  上图中进入交互解释运行环境，显示了 python 环境的相关信息。然后尝<br>
+试执行了第一行代码 <code>print(&quot;hello world)</code>，成功运行并打印了 hello world<br>
+内容；接着我们执行了退出交互环境的函数 <code>exit()</code>，成功退出python交互解<br>
+释环境。</p>
+<p>  除了使用 python 交互解释环境，我们还可以直接编写 python 源代码文件使<br>
+用 vim 编辑器编写一个简单的 hello.py ，然后使用 python 命令直接运行它，如图：</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># cat hello.py </span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"hello world"</span>)
+[root@localhost ~]<span class="hljs-comment"># python hello.py </span>
+hello world
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<h4 id="112-%E4%BD%BF%E7%94%A8centos7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84-python3-%E7%89%88%E6%9C%AC">1.1.2 使用CentOS7系统中的 Python3 版本</h4>
+<p>  默认情况下 CentOS7 系统中自带的 Python 版本是2.7版本。我们当前学习的Python<br>
+版本为 Python3 版本，所以我们可以通过 yum 软件包管理工具安装python3版本, 不过由<br>
+于 CentOS7 的 Base 软件包仓库默认没有 Python3版本 ，因此查找失败，如下图:</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># yum list "*python3*"</span>
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: centos.ustc.edu.cn
+ * extras: mirrors.163.com
+ * updates: mirrors.163.com
+Error: No matching Packages to list
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<p>  除了 Base 仓库，我们还可以使用 epel 仓库，要想使用 epel 仓库，我们需要先安装<br>
+一下 epel 仓库，安装过程如下:</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># yum install epel-release -y</span>
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.njupt.edu.cn
+ * extras: mirrors.163.com
+ * updates: mirrors.163.com
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package epel-release.noarch 0:7-11 will be installed
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch             Version         Repository        Size
+================================================================================
+Installing:
+ epel-release           noarch           7-11            extras            15 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 15 k
+Installed size: 24 k
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/extras/packages/epel-release-7-11.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key <span class="hljs-keyword">for</span> epel-release-7-11.noarch.rpm is not installed
+epel-release-7-11.noarch.rpm                               |  15 kB   00:00     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : <span class="hljs-string">"CentOS-7 Key (CentOS 7 Official Signing Key) &lt;security@centos.org&gt;"</span>
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-5.1804.el7.centos.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Running transaction check
+Running transaction <span class="hljs-built_in">test</span>
+Transaction <span class="hljs-built_in">test</span> succeeded
+Running transaction
+  Installing : epel-release-7-11.noarch                                     1/1 
+  Verifying  : epel-release-7-11.noarch                                     1/1 
+
+Installed:
+  epel-release.noarch 0:7-11                                                    
+
+Complete!
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<p>  epel 仓库安装完毕后，我们使用 yum 命令再次查询 python3 ，发现有多个不同版本的 python3<br>
+软件包。这里我节选了一部分内容，如下图:</p>
+<pre class="hljs"><code><div>root@localhost ~]<span class="hljs-comment"># yum list "*python3*"</span>
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+epel/x86_64/metalink                                     | 7.1 kB     00:00     
+ * base: centos.ustc.edu.cn
+ * epel: mirrors.yun-idc.com
+ * extras: mirrors.163.com
+ * updates: centos.ustc.edu.cn
+epel                                                     | 4.7 kB     00:00     
+(1/3): epel/x86_64/group_gz                                |  88 kB   00:00     
+(2/3): epel/x86_64/updateinfo                              | 1.0 MB   00:03     
+(3/3): epel/x86_64/primary_db                              | 6.6 MB   00:05     
+Available Packages
+abrt-addon-python3.noarch                2.1.11-49.el7                      epel
+boost-python34.x86_64                    1.53.0-28.el7                      epel
+boost-python34-devel.x86_64              1.53.0-28.el7                      epel
+python3-urjtag.x86_64                    2017.10-2.el7                      epel
+python3-virtualenv-doc.noarch            15.1.0-2.el7                       epel
+python34.x86_64                          3.4.9-2.el7                        epel
+python34-Cython.x86_64                   0.23.5-1.el7                       epel
+python34-PyMySQL.noarch                  0.9.2-1.el7                        epel
+python34-PyYAML.x86_64                   3.11-3.el7                         epel
+·
+·省略部分软件包信息.......
+·
+python34-aiosmtpd.noarch                 1.0-2.el7                          epel
+python34-zope-interface.x86_64           4.3.3-1.el7                        epel
+python34-zope-schema.noarch              4.4.1-2.el7                        epel
+python34-zope-testing.noarch             4.1.2-2.el7                        epel
+python36.x86_64                          3.6.6-2.el7                        epel
+python36-PyYAML.x86_64                   3.11-3.el7                         epel
+python36-asn1crypto.noarch               0.24.0-6.el7                       epel
+python36-blosc.x86_64                    1.2.8-4.el7                        epel
+python36-bsddb3.x86_64                   6.2.6-3.el7                        epel
+python36-chardet.noarch                  2.3.0-4.el7                        epel
+uwsgi-plugin-python34-gevent.x86_64      2.0.17.1-1.el7                     epel
+uwsgi-plugin-python34-tornado.x86_64     2.0.17.1-1.el7                     epel
+uwsgi-plugin-python36.x86_64             2.0.17.1-1.el7                     epel
+uwsgi-plugin-python36-gevent.x86_64      2.0.17.1-1.el7                     epel
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<p>   根据上图中的 epel 仓库 python3 软件包信息，我们选择 python36.x86_64 版本进行安<br>
+装，如图:</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># yum install python36 -y</span>
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.njupt.edu.cn
+ * epel: mirrors.yun-idc.com
+ * extras: mirrors.163.com
+ * updates: mirrors.163.com
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package python36.x86_64 0:3.6.6-2.el7 will be installed
+--&gt; Processing Dependency: python36-libs(x86-64) = 3.6.6-2.el7 <span class="hljs-keyword">for</span> package: python36-3.6.6-2.el7.x86_64
+--&gt; Processing Dependency: libpython3.6m.so.1.0()(64bit) <span class="hljs-keyword">for</span> package: python36-3.6.6-2.el7.x86_64
+--&gt; Running transaction check
+---&gt; Package python36-libs.x86_64 0:3.6.6-2.el7 will be installed
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package               Arch           Version                Repository    Size
+================================================================================
+Installing:
+ python36              x86_64         3.6.6-2.el7            epel          66 k
+Installing <span class="hljs-keyword">for</span> dependencies:
+ python36-libs         x86_64         3.6.6-2.el7            epel         8.6 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 8.6 M
+Installed size: 36 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/epel/packages/python36-3.6.6-2.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key <span class="hljs-keyword">for</span> python36-3.6.6-2.el7.x86_64.rpm is not installed
+(1/2): python36-3.6.6-2.el7.x86_64.rpm                     |  66 kB   00:01     
+(2/2): python36-libs-3.6.6-2.el7.x86_64.rpm                | 8.6 MB   00:29     
+--------------------------------------------------------------------------------
+Total                                              297 kB/s | 8.6 MB  00:29     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : <span class="hljs-string">"Fedora EPEL (7) &lt;epel@fedoraproject.org&gt;"</span>
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@extras)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Running transaction check
+Running transaction <span class="hljs-built_in">test</span>
+Transaction <span class="hljs-built_in">test</span> succeeded
+Running transaction
+  Installing : python36-libs-3.6.6-2.el7.x86_64                             1/2 
+  Installing : python36-3.6.6-2.el7.x86_64                                  2/2 
+  Verifying  : python36-3.6.6-2.el7.x86_64                                  1/2 
+  Verifying  : python36-libs-3.6.6-2.el7.x86_64                             2/2 
+
+Installed:
+  python36.x86_64 0:3.6.6-2.el7                                                 
+
+Dependency Installed:
+  python36-libs.x86_64 0:3.6.6-2.el7                                            
+
+Complete!
+[root@localhost ~]<span class="hljs-comment">#</span>
+</div></code></pre>
+<p>   python36 安装成功后，我们可以使用 rpm 命令查看一下 python36 具体包含哪些命令<br>
+和文件，如图:</p>
+<pre class="hljs"><code><div>root@localhost ~]<span class="hljs-comment"># rpm -ql python36</span>
+/usr/bin/pydoc3.6
+/usr/bin/python3.6
+/usr/bin/python3.6m
+/usr/bin/python36
+/usr/bin/pyvenv-3.6
+/usr/share/doc/python36-3.6.6
+/usr/share/doc/python36-3.6.6/README.rst
+/usr/share/licenses/python36-3.6.6
+/usr/share/licenses/python36-3.6.6/LICENSE
+/usr/share/man/man1/python3.6.1.gz
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<p>  与 python2.7 版本一样，python36 依旧可以使用交互解释环境和 python 命令模式运行<br>
+代码，这里我就不演示交互解释环境，我们直接使用 python36 命令 运行之前编写好的 hello.py<br>
+程序 如下图：</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># python36 -V</span>
+Python 3.6.6
+[root@localhost ~]<span class="hljs-comment"># python36 hello.py </span>
+hello world
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<h4 id="113-centos7-%E7%B3%BB%E7%BB%9F%E4%B8%AD-pycharm-%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8">1.1.3 CentOS7 系统中 Pycharm 环境使用</h4>
+<p>  之前演示的 hello.py 程序非常简单，属于演示测试。正常的 Python 项目根据业务需求和<br>
+功能通常包含众多 python 源文件，再使用传统的 vim 进行编写和管理就不是和方便了。下面<br>
+给大家在 Linux 环境下安装一款专业的集成开发工具(IDE) Pycharm 。</p>
+<p>  安装 Pycharm 之前，我们现在 CentOS 系统中创建一个专门用来学习 Python 开发的用户，<br>
+比如，我们创建一个用户叫 python、devops，ai 等，然后再退出 root 用户，使用新建的用户<br>
+登录系统，如下图:</p>
+<pre class="hljs"><code><div>[root@localhost ~]<span class="hljs-comment"># passwd python</span>
+Changing password <span class="hljs-keyword">for</span> user python.
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is based on a dictionary word
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@localhost ~]<span class="hljs-comment"># </span>
+</div></code></pre>
+<p>  使用刚才创建的 python 用户登录后，打开命令行终端，我们使用 wet 命令下载pycharm官<br>
+网的 免费开源版 安装包 pycharm-community-2018.3.5.tar.gz ，如下图:</p>
+<pre class="hljs"><code><div>[python@localhost ~]$ wget https://download.jetbrains.com/python/pycharm-community-2018.3.5.tar.gz
+--2019-03-25 17:27:00--  https://download.jetbrains.com/python/pycharm-community-2018.3.5.tar.gz
+Resolving download.jetbrains.com (download.jetbrains.com)... 54.72.98.183, 52.18.241.155, 2a05:d018:93b:d103:524e:e6ed:6592:1823, ...
+Connecting to download.jetbrains.com (download.jetbrains.com)|54.72.98.183|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://download.jetbrains.8686c.com/python/pycharm-community-2018.3.5.tar.gz [following]
+--2019-03-25 17:27:02--  https://download.jetbrains.8686c.com/python/pycharm-community-2018.3.5.tar.gz
+Resolving download.jetbrains.8686c.com (download.jetbrains.8686c.com)... 60.221.21.254, 2408:876c:0:100::25
+Connecting to download.jetbrains.8686c.com (download.jetbrains.8686c.com)|60.221.21.254|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 311914955 (297M) [application/octet-stream]
+Saving to: ‘pycharm-community-2018.3.5.tar.gz’
+
+100%[=================================================================================================&gt;] 311,914,955 1.22MB/s   <span class="hljs-keyword">in</span> 7m 53s 
+
+2019-03-25 17:34:55 (644 KB/s) - ‘pycharm-community-2018.3.5.tar.gz’ saved [311914955/311914955]
+
+[python@localhost ~]$
+[python@localhost ~]$ ll
+total 304644
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Desktop
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Documents
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Downloads
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Music
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Pictures
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Public
+-rw-rw-r--. 1 python python 311914955 Feb 27 19:15 pycharm-community-2018.3.5.tar.gz
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Templates
+drwxr-xr-x. 2 python python      4096 Mar 25 17:02 Videos
+[python@localhost ~]$
+</div></code></pre>
+<p>  上图中，下载软件包过程比较慢，建议提前下载好对应的软件包，方便后续安装操作。<br>
+安装过程比较简单，直接解压开就可以使用:</p>
+<pre class="hljs"><code><div>[python@localhost ~]$ mkdir software
+[python@localhost ~]$ <span class="hljs-built_in">cd</span> software/
+[python@localhost software]$ <span class="hljs-built_in">cd</span> ..
+[python@localhost ~]$ tar xf pycharm-community-2018.3.5.tar.gz -C software/
+[python@localhost ~]$ <span class="hljs-built_in">cd</span> software
+[python@localhost software]$ mv pycharm-community-2018.3.5 pycharm180305
+[python@localhost software]$ <span class="hljs-built_in">cd</span> pycharm180305/
+[python@localhost pycharm180305]$ <span class="hljs-built_in">cd</span> bin
+[python@localhost bin]$ ls
+format.sh     fsnotifier-arm   libdbm64.so  pycharm64.vmoptions  pycharm.svg
+fsnotifier    idea.properties  log.xml      pycharm.png          pycharm.vmoptions
+fsnotifier64  inspect.sh       printenv.py  pycharm.sh           restart.py
+[python@localhost bin]$ ./pycharm.sh 
+Mar 25, 2019 5:45:20 PM java.util.prefs.FileSystemPreferences<span class="hljs-variable">$1</span> run
+INFO: Created user preferences directory.
+Mar 25, 2019 5:45:20 PM java.util.prefs.FileSystemPreferences<span class="hljs-variable">$6</span> run
+WARNING: Prefs file removed <span class="hljs-keyword">in</span> background /home/python/.java/.userPrefs/prefs.xml
+[python@localhost bin]$ 
+</div></code></pre>
+<p>  上图中直接可以在 pycharm 的bin目录下运行 pycharm.sh 但是当前的终端被占用了。<br>
+下面我们设置一个 pycharm 的桌面快捷方程式，避免在终端中使用命令开启，具体步骤<br>
+如下图:</p>
+<pre class="hljs"><code><div>[python@localhost ~]$ <span class="hljs-built_in">cd</span> Desktop/
+[python@localhost Desktop]$ touch pycharm.desktop 
+[python@localhost Desktop]$ vi pycharm.desktop 
+[python@localhost Desktop]$ cat pycharm.desktop 
+[Desktop Entry]
+Name=pycharm
+Exec=/home/python/software/pycharm180305/bin/pycharm.sh
+Type=Application
+Icon=/home/python/software/pycharm180305/bin/pycharm.png
+Terminal=<span class="hljs-literal">false</span>
+[python@localhost Desktop]$ 
+</div></code></pre>
+<h4 id="114-pycharm-%E4%B8%AD%E5%AE%89%E8%A3%85-jupyter">1.1.4 Pycharm 中安装 Jupyter</h4>
+<p>我们通过 CentOS7 系统桌面中创建的 pycharm 快捷方程式打开 pycharm ， 创建一个test项目<br>
+然后点击 pycharm中的控制台，进行 pip 的跟新 和 jupyter 的安装，如图：</p>
+<pre class="hljs"><code><div>(venv) [python@localhost <span class="hljs-built_in">test</span>]$ pip install --upgrade pip
+(venv) [python@localhost <span class="hljs-built_in">test</span>]$ pip install jupyter
+(venv) [python@localhost <span class="hljs-built_in">test</span>]$ jupyter notebook --ip=0.0.0.0 --port=8000
+[I 18:25:00.814 NotebookApp] Serving notebooks from <span class="hljs-built_in">local</span> directory: /home/python/PycharmProjects/<span class="hljs-built_in">test</span>
+[I 18:25:00.815 NotebookApp] The Jupyter Notebook is running at:
+[I 18:25:00.815 NotebookApp] http://(localhost.localdomain or 127.0.0.1):8000/?token=f7d20e19f9abf2cd8323034c6a60e6bf0a3c30a98f866fbc
+[I 18:25:00.815 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 18:25:00.833 NotebookApp] 
+    
+    To access the notebook, open this file <span class="hljs-keyword">in</span> a browser:
+        file:///run/user/1001/jupyter/nbserver-8326-open.html
+    Or copy and paste one of these URLs:
+        http://(localhost.localdomain or 127.0.0.1):8000/?token=f7d20e19f9abf2cd8323034c6a60e6bf0a3c30a98f866fbc
+^C[I 18:25:14.249 NotebookApp] interrupted
+Serving notebooks from <span class="hljs-built_in">local</span> directory: /home/python/PycharmProjects/<span class="hljs-built_in">test</span>
+0 active kernels
+The Jupyter Notebook is running at:
+http://(localhost.localdomain or 127.0.0.1):8000/?token=f7d20e19f9abf2cd8323034c6a60e6bf0a3c30a98f866fbc
+Shutdown this notebook server (y/[n])? y
+[C 18:25:16.200 NotebookApp] Shutdown confirmed
+[I 18:25:16.210 NotebookApp] Shutting down 0 kernels
+(venv) [python@localhost <span class="hljs-built_in">test</span>]$ 
+</div></code></pre>
+
+</body>
+</html>
