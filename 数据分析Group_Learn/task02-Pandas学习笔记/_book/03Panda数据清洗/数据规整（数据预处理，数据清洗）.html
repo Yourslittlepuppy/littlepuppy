@@ -1,0 +1,547 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Pandas数据规整-清理.md | 摘要</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../02pandas高级/项目实战一  电商客户数据分析.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.1"
+        data-chapter-title="Pandas数据规整-清理.md"
+        data-filepath="03Panda数据清洗/数据规整（数据预处理，数据清洗）.md"
+        data-basepath=".."
+        data-revision="Sat Aug 10 2019 08:21:09 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        摘要
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> [第一章:Pandas 基础知识]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-basic/Series创建与查询.html">
+            
+                
+                    <a href="../01-basic/Series创建与查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Series创建与查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-basic/DataFrame数据结构与创建.html">
+            
+                
+                    <a href="../01-basic/DataFrame数据结构与创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        DataFrame数据结构与创建
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-basic/DataFrame数据查询与修改.html">
+            
+                
+                    <a href="../01-basic/DataFrame数据查询与修改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        DataFrame数据查询与修改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-basic/Pandas数据存取.html">
+            
+                
+                    <a href="../01-basic/Pandas数据存取.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Pandas数据存取
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="01-basic/Pandas数据操作基础.html">
+            
+                
+                    <a href="../01-basic/Pandas数据操作基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Pandas数据操作基础
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> [第二章: Pandas应用]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02pandas高级/Pandas分组聚合 - 基础.html">
+            
+                
+                    <a href="../02pandas高级/Pandas分组聚合 - 基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Pandas分组聚合基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02pandas高级/重塑和轴向旋转.html">
+            
+                
+                    <a href="../02pandas高级/重塑和轴向旋转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Pandas数据重塑与旋转
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02pandas高级/透视表和交叉表.html">
+            
+                
+                    <a href="../02pandas高级/透视表和交叉表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        透视表和交叉表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="02pandas高级/Pandas绘图.html">
+            
+                
+                    <a href="../02pandas高级/Pandas绘图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Pandas绘图基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="02pandas高级/项目实战一  电商客户数据分析.html">
+            
+                
+                    <a href="../02pandas高级/项目实战一  电商客户数据分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        实战一
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> [第三章 :Pands数据清洗]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="03Panda数据清洗/数据规整（数据预处理，数据清洗）.html">
+            
+                
+                    <a href="../03Panda数据清洗/数据规整（数据预处理，数据清洗）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Pandas数据规整-清理.md
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >摘要</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x6570;&#x636E;&#x89C4;&#x6574;&#xFF08;&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;&#xFF0C;&#x6570;&#x636E;&#x6E05;&#x6D17;&#xFF09;">&#x6570;&#x636E;&#x89C4;&#x6574;&#xFF08;&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;&#xFF0C;&#x6570;&#x636E;&#x6E05;&#x6D17;&#xFF09;</h2>
+<p>&#x6570;&#x636E;&#x89C4;&#x6574;&#x7684;&#x4E00;&#x822C;&#x5206;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x6E05;&#x7406;</li>
+<li>&#x8F6C;&#x6362;</li>
+<li>&#x5408;&#x5E76;</li>
+<li>&#x91CD;&#x5851;</li>
+</ul>
+<hr>
+<h1 id="pandas&#x6570;&#x636E;&#x89C4;&#x6574;&#x6E05;&#x7406;&#xFF1A;">Pandas&#x6570;&#x636E;&#x89C4;&#x6574;-&#x6E05;&#x7406;&#xFF1A;</h1>
+<p>&#x5BF9;&#x6307;&#x5B9A;&#x6570;&#x636E;&#xFF08;&#x5982;&#x7F3A;&#x5931;&#x6570;&#x636E;&#x3001;&#x91CD;&#x590D;&#x6570;&#x636E;&#xFF09;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF08;&#x68C0;&#x67E5;&#x3001;&#x66FF;&#x6362;&#x3001;&#x5220;&#x9664;&#xFF09;</p>
+<ul>
+<li>&#x7F3A;&#x5931;&#x503C;&#x7684;&#x8868;&#x793A;&#xFF1A;np.nan</li>
+<li>&#x68C0;&#x67E5;&#x7F3A;&#x5931;&#x503C;&#xFF1A;isnull(),notnull(),info()</li>
+<li>&#x5220;&#x9664;&#x7F3A;&#x5931;&#x503C;&#xFF1A;dropna()</li>
+<li>&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;&#xFF1A;fillna()</li>
+<li>&#x66FF;&#x6362;&#x503C;&#xFF08;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;&#x662F;&#x66FF;&#x6362;&#x503C;&#x7684;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF09;&#xFF1A;replace()</li>
+</ul>
+<hr>
+<ul>
+<li>&#x79FB;&#x9664;&#x91CD;&#x590D;&#x6570;&#x636E;</li>
+<li>&#x68C0;&#x6D4B;&#x548C;&#x8FC7;&#x6EE4;&#x5F02;&#x5E38;&#x503C;</li>
+</ul>
+<h2 id="pandas&#x7F3A;&#x5931;&#x6570;&#x636E;&#x5904;&#x7406;">Pandas&#x7F3A;&#x5931;&#x6570;&#x636E;&#x5904;&#x7406;</h2>
+<p>&#x7F3A;&#x5931;&#x503C;&#x7684;&#x8868;&#x793A;</p>
+<pre><code class="lang-python">b = np.array([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-keyword">None</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>])
+b 
+b+<span class="hljs-number">10</span> <span class="hljs-comment"># &#x76F4;&#x63A5;&#x76F8;&#x52A0;&#x4F1A;&#x62A5;&#x9519;</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;numpy&#x7684;&#x7F3A;&#x5931;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;npnan">&#x4F7F;&#x7528;Numpy&#x7684;&#x7F3A;&#x5931;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;np.nan</h3>
+<p>&#x7F3A;&#x5931;&#x503C;&#x8FD0;&#x7B97;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x548C;&#x7F3A;&#x5931;&#x503C;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#xFF0C;&#x7ED3;&#x679C;&#x8FD8;&#x662F;&#x7F3A;&#x5931;&#x503C;</p>
+<pre><code class="lang-python">c = np.array([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, np.nan, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>])
+c
+c+<span class="hljs-number">10</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>array([<span class="hljs-number">12.</span>, <span class="hljs-number">14.</span>, nan, <span class="hljs-number">20.</span>, <span class="hljs-number">22.</span>])
+c.sum()  <span class="hljs-comment"># &#x4EFB;&#x4F55;&#x6570;&#x7EC4;&#x548C;&#x7F3A;&#x5931;&#x503C;&#x8BA1;&#x7B97; &#xFF0C;&#x7ED3;&#x679C;&#x8FD8;&#x662F;&#x7F3A;&#x5931;&#x503C;</span>
+np.sum(c)
+</code></pre>
+<p>nan&#x4E13;&#x6709;&#x8FD0;&#x7B97;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x8DF3;&#x8FC7;&#x7F3A;&#x5931;&#x503C;&#xFF0C;&#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#x6B63;&#x5E38;&#x503C;</p>
+<pre><code class="lang-python">np.nansum(c)  <span class="hljs-comment"># 28 </span>
+np.nanmean(c) <span class="hljs-comment"># 7</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;pandas&#x7F3A;&#x5931;&#x503C;&#x8BA1;&#x7B97;">&#x4F7F;&#x7528;Pandas&#x7F3A;&#x5931;&#x503C;&#x8BA1;&#x7B97;</h3>
+<p>Pandas&#x4E2D;&#xFF0C;&#x4E0D;&#x8BBA;&#x7F3A;&#x5931;&#x503C;&#x662F; None &#x8FD8;&#x662F; np.nan &#xFF0C;&#x90FD;&#x4F1A;&#x88AB;&#x8F6C;&#x5316;&#x4E3A; NaN &#x7684;&#x5F62;&#x5F0F;</p>
+<pre><code>NaN&#xFF1A;&#x975E;&#x6570;&#x5B57;&#xFF0C;not a number&#xFF0C;Pandas&#x4E2D;&#x5B83;&#x8868;&#x793A;&#x7F3A;&#x5931;&#x6216;NA&#x503C;&#xFF0C;&#x4FBF;&#x4E8E;&#x88AB;&#x68C0;&#x6D4B;&#x51FA;&#x6765;
+&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;np.nan
+Pandas&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x7F3A;&#x5931;&#x503C;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;
+</code></pre><pre><code class="lang-python">b = pd.Series([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,np.nan,<span class="hljs-number">4</span>,<span class="hljs-keyword">None</span>,<span class="hljs-number">6</span>])
+b+<span class="hljs-number">10</span>
+b.sum()
+b.mean()
+<span class="hljs-comment"># &#x90FD;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BA1;&#x7B97;</span>
+</code></pre>
+<pre><code class="lang-python">c = pd.DataFrame([[<span class="hljs-number">1</span>,np.nan,<span class="hljs-number">3</span>], [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>], [np.nan,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]])
+c
+</code></pre>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1565351330763.png" alt="1565351330763"></p>
+<pre><code class="lang-python">c.sum() <span class="hljs-comment"># &#x6309;&#x884C;&#x8BA1;&#x7B97;&#x6C42;&#x51FA;&#x5176;&#x548C;</span>
+<span class="hljs-comment"># &#x6309;&#x884C;&#x8BA1;&#x7B97;&#x662F;&#x4E00;&#x5217;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x76F8;&#x52A0;</span>
+</code></pre>
+<h2 id="&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x4E2D;&#x662F;&#x5426;&#x542B;&#x6709;&#x7F3A;&#x5931;&#x503C;">&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x4E2D;&#x662F;&#x5426;&#x542B;&#x6709;&#x7F3A;&#x5931;&#x503C;</h2>
+<h4 id="&#x68C0;&#x67E5;&#x5355;&#x4E2A;&#x7A7A;&#x503C;">&#x68C0;&#x67E5;&#x5355;&#x4E2A;&#x7A7A;&#x503C;</h4>
+<p>&#x5355;&#x4E2A;&#x7A7A;&#x503C;&#xFF0C;&#x5E95;&#x5C42;&#x7C7B;&#x578B;&#x4E3A; np.nan&#xFF0C;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x6BD4;&#x8F83;&#x662F;&#x5426;&#x76F8;&#x540C;</p>
+<pre><code class="lang-python">np.isnan(<span class="hljs-number">3</span>)  <span class="hljs-comment"># False </span>
+np.isnan(np.nan)  <span class="hljs-comment"># True</span>
+</code></pre>
+<h3 id="isnull&#x548C;notnull">isnull()&#x548C;notnull()</h3>
+<ul>
+<li>isnull()&#xFF1A;&#x7F3A;&#x5931;&#x503C;&#x8FD4;&#x56DE;True,&#x6B63;&#x5E38;&#x503C;&#x8FD4;&#x56DE;False</li>
+<li>notnull():&#x6B63;&#x5E38;&#x503C;&#x8FD4;&#x56DE;True,&#x7F3A;&#x5931;&#x503C;&#x8FD4;&#x56DE;False</li>
+</ul>
+<pre><code class="lang-Python">b.isnull()  <span class="hljs-comment"># &#x9009;&#x4E2D;&#x6240;&#x6709;&#x7F3A;&#x5931;&#x503C;</span>
+b[b.isnull()] <span class="hljs-comment"># &#x5C06;&#x7F3A;&#x5931;&#x503C;&#x67E5;&#x8BE2;&#x51FA;&#x6765;</span>
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x6B63;&#x5E38;&#x503C;</p>
+<p>&#x624B;&#x52A8;&#x8FC7;&#x6EE4;Series&#x7684;&#x7F3A;&#x5931;&#x503C;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x9009;&#x4E2D;&#x6240;&#x6709;&#x975E;&#x7F3A;&#x5931;&#x503C;</span>
+-b.isnull()  <span class="hljs-comment"># &#x52A0;&#x4E00;&#x4E2A;&quot;-&quot;&#x8868;&#x793A;&#x6C42;&#x53CD;</span>
+b[-b.isnull()]
+</code></pre>
+<pre><code class="lang-python">b.notnull()  <span class="hljs-comment"># &#x540C;&#x4E0A;,  &#x9009;&#x4E2D;&#x6240;&#x6709;&#x975E;&#x7F3A;&#x5931;&#x503C;</span>
+b[b.notnull()]
+</code></pre>
+<p>DataFrame&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x5E03;&#x5C14;&#x67E5;&#x8BE2;&#x65B9;&#x5F0F;&#x8FC7;&#x6EE4;&#x7F3A;&#x5931;&#x503C;,&#x5FC5;&#x987B;&#x4F7F;&#x7528;Pandas&#x7684;&#x7279;&#x5B9A;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;</p>
+<p>&#x67E5;&#x5230;&#x7F3A;&#x5931;&#x503C;&#x540E;&#xFF0C;Series&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FC7;&#x6EE4;&#xFF0C;DataFrame&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x5904;&#x7406;(&#x586B;&#x5145;&#x6216;&#x5220;&#x9664;)</p>
+<pre><code class="lang-python">c.isnull()
+c[c.isnull()]
+<span class="hljs-comment">##########</span>
+c.notnull()
+c[c.notnull()]
+</code></pre>
+<h2 id="&#x53BB;&#x9664;&#x7F3A;&#x5931;&#x503C;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x6709;&#x6548;&#x503C;">&#x53BB;&#x9664;&#x7F3A;&#x5931;&#x503C;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x6709;&#x6548;&#x503C;</h2>
+<p><strong>dropna()&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-python">b.dropna()
+b[b.notnull()]  <span class="hljs-comment"># &#x7B49;&#x540C;&#x4E8E;:&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x975E;&#x7F3A;&#x5931;&#x503C;</span>
+</code></pre>
+<p>DataFrame&#x7F3A;&#x5931;&#x503C;&#x5904;&#x7406;</p>
+<pre><code class="lang-python">c.dropna()  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x6309;&#x884C;</span>
+c.dropna(axis=<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x6309;&#x5217;&#x5220;&#x9664;  &#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x662F;NaN&#x7684;&#x5C31;&#x5220;&#x9664;&#x6574;&#x884C;&#x6216;&#x8005;&#x6574;&#x5217;</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x4E0D;&#x60F3;&#x8FD9;&#x6837;&#x64CD;&#x4F5C;,&#x6709;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x529E;&#x6CD5;&#x5462;?</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x884C;&#x6216;&#x5217;&#xFF0C;&#x6709;1&#x4E2A;&#x7F3A;&#x5931;&#x503C;&#x5373;&#x5220;&#x9664;</span>
+c.dropna(axis=<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x7B80;&#x5199;&#xFF0C;&#x9ED8;&#x8BA4;</span>
+c.dropna(axis=<span class="hljs-number">1</span>, how=<span class="hljs-string">&apos;any&apos;</span>) <span class="hljs-comment"># &#x53EA;&#x6709;&#x6709;&#x7F3A;&#x5931;&#x503C;&#x5C31;&#x5220;&#x9664;</span>
+c.dropna(axis=<span class="hljs-number">1</span>, how=<span class="hljs-string">&apos;all&apos;</span>) <span class="hljs-comment"># &#x5168;&#x90E8;&#x662F;NaN&#x7684;&#x624D;&#x5220;&#x9664;</span>
+c.dropna(thresh=<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x884C;&#x975E;&#x7F3A;&#x5931;&#x503C;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;3&#x4E2A;&#xFF0C;&#x4FDD;&#x7559;</span>
+</code></pre>
+<h2 id="&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;">&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;</h2>
+<p>&#x7F3A;&#x5931;&#x503C;&#x95EE;&#x9898;&#x9664;&#x4E86;&#x5220;&#x9664;&#x6240;&#x5728;&#x884C;&#x5217;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x586B;&#x5145;&#x503C;&#x89E3;&#x51B3;</p>
+<p>fillna()&#x51FD;&#x6570;&#x53C2;&#x6570;</p>
+<pre><code class="lang-python">b.fillna(<span class="hljs-number">0</span>)  <span class="hljs-comment"># &#x7F3A;&#x5931;&#x503C;&#x586B;&#x5145;&#x4E3A;0</span>
+b.fillna(b.mean())<span class="hljs-comment"># &#x586B;&#x5145;&#x5E73;&#x5747;&#x503C;</span>
+</code></pre>
+<h4 id="&#x524D;&#x5411;&#x586B;&#x5145;&#x548C;&#x540E;&#x5411;&#x586B;&#x5145;">&#x524D;&#x5411;&#x586B;&#x5145;&#x548C;&#x540E;&#x5411;&#x586B;&#x5145;</h4>
+<ul>
+<li>method=&apos;ffill&apos;</li>
+<li>method=&apos;bfill&apos;</li>
+</ul>
+<pre><code class="lang-python">b.fillna(method = <span class="hljs-string">&apos;ffill&apos;</span>)
+b.fillb=na(method = <span class="hljs-string">&apos;bfill&apos;</span>)
+c.fillna(method = <span class="hljs-string">&apos;ffill&apos;</span>,axis = <span class="hljs-number">1</span>) <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x662F;&#x6309;&#x884C;,&#x53EF;&#x4EE5;&#x6309;&#x5217;&#x8FDB;&#x884C;&#x524D;&#x540E;&#x586B;&#x5145;</span>
+c.fillb=na(method = <span class="hljs-string">&apos;bfill&apos;</span>)
+</code></pre>
+<h4 id="&#x7ED9;&#x5404;&#x5217;&#x5206;&#x522B;&#x586B;&#x5145;&#x4E0D;&#x540C;&#x503C;">&#x7ED9;&#x5404;&#x5217;&#x5206;&#x522B;&#x586B;&#x5145;&#x4E0D;&#x540C;&#x503C;</h4>
+<pre><code class="lang-python">c.fillna({<span class="hljs-number">0</span>: <span class="hljs-number">10</span>, <span class="hljs-number">1</span>: <span class="hljs-number">100</span>, <span class="hljs-number">3</span>: <span class="hljs-number">1000</span>})  <span class="hljs-comment"># &#x66FF;&#x6362;&#x7684;&#x662F;&#x5217;&#x7D22;&#x5F15;.&#x7ED9;&#x6BCF;&#x4E00;&#x5217;&#x586B;&#x5145;&#x4E0D;&#x540C;&#x7684;&#x503C;</span>
+</code></pre>
+<p> &#x4E0A;&#x9762;&#x4E00;&#x5207;&#x5220;&#x9664;&#x3001;&#x586B;&#x5145;&#x64CD;&#x4F5C;&#x90FD;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x539F;&#x53D8;&#x91CF;,&#x53EA;&#x662F;&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6570;&#x7EC4;
+&#x4FEE;&#x6539;&#x539F;&#x503C;&#x53C2;&#x6570;&#xFF1A;inplace=True,</p>
+<pre><code class="lang-python"><span class="hljs-comment"># c.fillna(100)</span>
+c.fillna(<span class="hljs-number">100</span>, inplace=<span class="hljs-keyword">True</span>) <span class="hljs-comment"># &#x4F1A;&#x5C06;&#x539F;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x4FEE;&#x6539;</span>
+</code></pre>
+<p><strong>&#x9650;&#x5236;&#x586B;&#x5145;&#x4E2A;&#x6570;</strong></p>
+<pre><code class="lang-python">c.fillna(method=<span class="hljs-string">&apos;ffill&apos;</span>, limit=<span class="hljs-number">2</span>)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x586B;&#x5145;&#x591A;&#x5C11;&#x884C;&#x6216;&#x5217;</span>
+</code></pre>
+<p><strong>&#x66FF;&#x6362;&#x503C;</strong></p>
+<p>&#x5229;&#x7528;fillna&#x65B9;&#x6CD5;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x6570;&#x636E;&#x662F;&#x503C;&#x66FF;&#x6362;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C; replace&#x65B9;&#x6CD5;&#x7528;&#x4F5C;&#x66FF;&#x6362;&#x503C;&#x66F4;&#x7B80;&#x5355;&#x3001;&#x66F4;&#x7075;&#x6D3B;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x66FF;&#x6362;&#x5355;&#x503C;</span>
+data.replace(-<span class="hljs-number">999</span>, np.nan)
+<span class="hljs-comment"># &#x66FF;&#x6362;&#x591A;&#x503C;&#xFF0C; &#x591A;&#x4E2A;&#x503C;&#x66FF;&#x6362;&#x4E3A;1&#x4E2A;</span>
+data.replace([-<span class="hljs-number">999</span>, -<span class="hljs-number">1000</span>], np.nan)
+<span class="hljs-comment"># &#x591A;&#x4E2A;&#x503C;&#x66FF;&#x6362;&#x4E3A;&#x4E0D;&#x540C;&#x6570;&#x503C;</span>
+data.replace([-<span class="hljs-number">999</span>, -<span class="hljs-number">1000</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+data.replace({-<span class="hljs-number">999</span>: <span class="hljs-number">0</span>, -<span class="hljs-number">1000</span>: <span class="hljs-number">1</span>})
+</code></pre>
+<h2 id="&#x6620;&#x5C04;&#x6570;&#x636E;&#x66FF;&#x6362;">&#x6620;&#x5C04;&#x6570;&#x636E;&#x66FF;&#x6362;</h2>
+<p>map&#x9664;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x8FD0;&#x7B97;&#xFF0C;&#x8FD8;&#x662F;&#x4E00;&#x79CD;&#x6620;&#x5C04;&#x8F6C;&#x6362;&#x5143;&#x7D20;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x6E05;&#x7406;&#x5DE5;&#x4F5C;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-python">a = pd.DataFrame([[<span class="hljs-string">&apos;&#x9B03;&#x5237;&apos;</span>,<span class="hljs-string">&apos;&#x76AE;&#x5E26;&apos;</span>,<span class="hljs-string">&apos;&#x714E;&#x86CB;&apos;</span>,<span class="hljs-string">&apos;&#x89C2;&#x8D4F;&apos;</span>], [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>]]).T
+a
+y = {<span class="hljs-string">&apos;&#x9B03;&#x5237;&apos;</span>: <span class="hljs-string">&apos;&#x732A;&apos;</span>, <span class="hljs-string">&apos;&#x76AE;&#x5E26;&apos;</span>: <span class="hljs-string">&apos;&#x725B;&apos;</span>, <span class="hljs-string">&apos;&#x89C2;&#x8D4F;&apos;</span>: <span class="hljs-string">&apos;&#x9C7C;&apos;</span>, <span class="hljs-string">&apos;&#x8863;&#x670D;&apos;</span>: <span class="hljs-string">&apos;&#x68C9;&#x82B1;&apos;</span>}
+a.map(y)
+</code></pre>
+<h2 id="&#x79FB;&#x9664;&#x91CD;&#x590D;&#x6570;&#x636E;">&#x79FB;&#x9664;&#x91CD;&#x590D;&#x6570;&#x636E;</h2>
+<p>&#x79FB;&#x9664;DataFrame&#x7684;&#x91CD;&#x590D;&#x884C;</p>
+<pre><code class="lang-python">data = pd.DataFrame({<span class="hljs-string">&apos;k1&apos;</span>:[<span class="hljs-string">&apos;one&apos;</span>] * <span class="hljs-number">3</span> + [<span class="hljs-string">&apos;two&apos;</span>] * <span class="hljs-number">4</span>,<span class="hljs-string">&apos;k2&apos;</span>:[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]})
+data
+</code></pre>
+<p>&#x91CD;&#x590D;&#x884C;&#x67E5;&#x8BE2;:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5E03;&#x5C14;&#x578B;Series,&#x5404;&#x5217;&#x91CD;&#x590D;&#x503C;&#x4EA4;&#x96C6;</span>
+data.duplicated() <span class="hljs-comment"># &#x79FB;&#x9664;&#x7684;&#x662F;&#x4E00;&#x884C;&#x4E2D;&#x6240;&#x6709;&#x76F8;&#x540C;&#x7684;&#x9879;</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># data.drop_duplicates()</span>
+data[-data.duplicated()] <span class="hljs-comment">#&#x7559;&#x4E0B;&#x91CD;&#x590D;&#x9879;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;</span>
+</code></pre>
+<p>&#x79FB;&#x9664;&#x81EA;&#x5B9A;&#x4E49;&#x5217;&#x91CD;&#x590D;&#x884C;</p>
+<pre><code class="lang-python">data.drop_duplicates(<span class="hljs-string">&apos;k1&apos;</span>)
+<span class="hljs-comment">#keep : {&#x2018;first&#x2019;, &#x2018;last&#x2019;, False},</span>
+<span class="hljs-comment"># first&#x9ED8;&#x8BA4;&#x7559;&#x4E0B;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x503C;</span>
+data.drop_duplicates([<span class="hljs-string">&apos;k1&apos;</span>, <span class="hljs-string">&apos;k2&apos;</span>])<span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x662F;&#x7559;&#x4E0B;&#x7B2C;&#x4E00;&#x4E2A;</span>
+data.drop_duplicates([<span class="hljs-string">&apos;k1&apos;</span>, <span class="hljs-string">&apos;k2&apos;</span>], keep=<span class="hljs-string">&apos;first&apos;</span>)
+<span class="hljs-comment"># last,&#x7559;&#x4E0B;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x503C;</span>
+data.drop_duplicates([<span class="hljs-string">&apos;k1&apos;</span>, <span class="hljs-string">&apos;k2&apos;</span>], keep=<span class="hljs-string">&apos;last&apos;</span>)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4FDD;&#x7559;&#x975E;&#x5168;&#x5217;&#x7684;&#x884C;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x7ED3;&#x679C;&#x884C;&#x4F1A;&#x4E0D;&#x540C;</span>
+data.drop_duplicates([<span class="hljs-string">&apos;k1&apos;</span>])
+data.drop_duplicates([<span class="hljs-string">&apos;k1&apos;</span>], keep=<span class="hljs-string">&apos;last&apos;</span>)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># False,&#x5220;&#x6389;&#x6240;&#x6709;&#x91CD;&#x590D;&#x503C;</span>
+data.drop_duplicates([<span class="hljs-string">&apos;k1&apos;</span>, <span class="hljs-string">&apos;k2&apos;</span>], keep=<span class="hljs-keyword">False</span>)
+</code></pre>
+<h3 id="&#x79FB;&#x9664;&#x91CD;&#x590D;&#x7D22;&#x5F15;&#x503C;">&#x79FB;&#x9664;&#x91CD;&#x590D;&#x7D22;&#x5F15;&#x503C;</h3>
+<pre><code class="lang-python">obj[~(obj.index.duplicated())]  <span class="hljs-comment"># &#x67E5;&#x8BE2;&#x4E0D;&#x91CD;&#x590D;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x503C;</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../02pandas高级/项目实战一  电商客户数据分析.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 实战一"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
